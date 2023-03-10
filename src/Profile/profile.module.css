@@ -1,0 +1,40 @@
+.profileContainer{
+    margin-top: 100px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.userProfilrWrapper{
+    display: flex;
+    gap: 25px;
+    padding: 50px;
+    background-color: red;
+    
+}
+.userProfileName{
+    display: flex;
+    gap: 15px;
+}
+.userProfileAgeGender{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+.userProfileEmail{
+    margin-top: 10px;
+}
+
+.userProfileBio{
+    margin-top: 10px;
+}
+.userProfileLanguages{
+    margin-top: 10px;
+}
+.userProfilePhoto{
+    width: 150px;
+    height: 150px;
+}
+.profileImg{
+    width: 150px;
+    height: 150px;
+}
