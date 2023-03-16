@@ -7,8 +7,8 @@ import defaultAvatar from '../assets/defaultAvatar.jpg'
 
 const Profile = () => {
     const { userData } = useLocation().state;
-    console.log("🚀 ~ file: Profile.js:5 ~ Profile ~ userData:", userData)
-    console.log('dsfsefs', userData.firstName)
+    // console.log("🚀 ~ file: Profile.js:5 ~ Profile ~ userData:", userData)
+    // console.log('dsfsefs', userData.firstName)
 
     return <div className={style.profile}>
         <div className={style.profileContainer}>

@@ -163,7 +163,7 @@ function App() {
     }
 
     setLanguages(newLanguages)
-    console.log("🚀 ~ file: App.js:158 ~ handleChangeLanguage ~ newLanguages:", newLanguages)
+    // console.log("🚀 ~ file: App.js:158 ~ handleChangeLanguage ~ newLanguages:", newLanguages)
   }
 
   const handleChangeGender = event => {
@@ -242,15 +242,15 @@ function App() {
                 <div onChange={handleChangeLanguage}>
                   <div>
                     <input type="checkbox" name='language ' id='Armenian' value={'Armenian'} />
-                    <label for='Armenian'>Armenian</label>
+                    <label htmlFor='Armenian'>Armenian</label>
                   </div>
                   <div>
                     <input type="checkbox" name='language ' id='Russian' value={'Russian'} />
-                    <label for='Russian' >Russian</label>
+                    <label htmlFor='Russian' >Russian</label>
                   </div>
                   <div>
                     <input type="checkbox" name='language ' id='English' value={'English'} />
-                    <label for='English'>English</label>
+                    <label htmlFor='English'>English</label>
                   </div>
                 </div>
 
@@ -262,13 +262,13 @@ function App() {
                       onChange={handleChangeGender}
                       checked={gender === 'Male'}
                     />
-                    <label for='Male'>Male</label>
+                    <label htmlFor='Male'>Male</label>
                   </div>
                   <div>
                     <input type="radio" name='female' id='Female' value={"Female"}
                       checked={gender === "Female"}
                       onChange={handleChangeGender} />
-                    <label for='Female' >Female</label>
+                    <label htmlFor='Female' >Female</label>
                   </div>
                 </div>
               </label>
