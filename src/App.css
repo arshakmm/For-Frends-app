@@ -1,11 +1,17 @@
 .App{
   display: flex;
   justify-content: center;
+  background-color: rgb(204, 194, 180);
+  height: 100vh;
 }
 .container{
   display: flex;
   justify-content: center;
   flex-direction: column;
+  background-color: rgb(148, 166, 167);
+  padding: 45px ;
+  margin: 20px;
+  border-radius: 40px;
 }
 
 .formWrraper{
@@ -14,13 +20,22 @@
   justify-content: space-between;
   flex-direction: column;
 }
+.formContainer{
+  display: flex;
+  gap: 100px;
+}
+.submitButton{
+  height: 40px;
+ width: 80px;
+   background-color: rgb(212, 56, 56);
+   border-radius: 25px;
+   border: none;
+}
+.uloadPhotoContainer{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 10px;
+}
 
-.days:focus option:first-of-type {
-  display: none;
-}
-.month:focus option:first-of-type {
-  display: none;
-}
-.year:focus option:first-of-type {
-  display: none;
-}
+

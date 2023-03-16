@@ -32,7 +32,7 @@ function App() {
     month: '',
     year: '',
     bio: '',
-    languages: '',
+    languages: ',',
     gender: '',
     avatarPhoto: ''
   }
@@ -70,7 +70,6 @@ function App() {
       }, (error) => {
         console.log(error.text);
       });
-
   }
 
 
@@ -156,6 +155,7 @@ function App() {
 
     let newLanguages = [...languages];
 
+
     if (!newLanguages.includes(event.target.value)) {
       newLanguages.push(event.target.value)
     } else {
@@ -163,7 +163,9 @@ function App() {
     }
 
     setLanguages(newLanguages)
+    console.log("🚀 ~ file: App.js:158 ~ handleChangeLanguage ~ newLanguages:", newLanguages)
   }
+
   const handleChangeGender = event => {
 
     setGender(event.target.value)
@@ -185,95 +187,101 @@ function App() {
     }
   }
 
-
   return (
     <div className="App">
       <div className="container">
         <form className='formWrraper' onSubmit={onSubmitHandler}>
-          <label> <div>Name:*</div>
-            <input type="text" name='name'
-              onChange={handleChangFirstname}
-              required
-              maxLength="50" />
-          </label>
-          <label> <div>Surname:*</div>
-            <input type="text" name='surname'
-              onChange={handleChangeLastName}
-              required
-              maxLength="50" />
-          </label>
-          <label> <div> Email:*</div>
-            <input type="email" name='email'
-              required
-              value={email}
-              onChange={handleChange} />
-            {error && <div style={{ color: 'red' }}>{error}</div>}
-          </label>
-          <label>  <div>Password:*</div>
-            <input type='password' name='password'
-              required
-              value={password}
-              onChange={handleChangePassword} />
-            {errorPassword && <div style={{ color: 'red' }}>{errorPassword}</div>}
-          </label>
-          <label><div>Date of birth:*</div>
-            <select className='days' name='days' onChange={(e) => handleChangeDate(e, "day")}>
-              <option>day</option>
-              {renderDays()}
-            </select>
-            <select className='month' name='month'
-              onChange={(e) => handleChangeDate(e, "month")} >
-              <option>month</option>
-              {renderMonths()}
-            </select>
-            <select className='year' name='year'
-              onChange={(e) => handleChangeDate(e, 'year')} >
-              <option value='year'>year</option>
-              {renderYears()}
-            </select>
-          </label>
-          {errorDate && <div style={{ color: 'red' }}>{errorDate}</div>}
-          <label> <div>Bio:</div>
-            <textarea name="bio" rows="4" cols="50"
-              onChange={handleChangeBio}
-            />
-          </label>
-          <label><div>Languages:*</div>
-            <div onChange={handleChangeLanguage}>
-              <div>
-                <input type="checkbox" name='language ' id='Armenian' value={'Armenian'} />
-                <label for='Armenian'>Armenian</label>
-              </div>
-              <div>
-                <input type="checkbox" name='language ' id='Russian' value={'Russian'} />
-                <label for='Russian' >Russian</label>
-              </div>
-              <div>
-                <input type="checkbox" name='language ' id='English' value={'English'} />
-                <label for='English'>English</label>
-              </div>
+          <div className='formContainer'>
+            <div className='formWrraperLeftSide'>
+              <label> <div>Name:*</div>
+                <input type="text" name='name'
+                  onChange={handleChangFirstname}
+                  required
+                  maxLength="50" />
+              </label>
+              <label> <div>Surname:*</div>
+                <input type="text" name='surname'
+                  onChange={handleChangeLastName}
+                  required
+                  maxLength="50" />
+              </label>
+              <label> <div> Email:*</div>
+                <input type="email" name='email'
+                  required
+                  value={email}
+                  onChange={handleChange} />
+                {error && <div style={{ color: 'red' }}>{error}</div>}
+              </label>
+              <label>  <div>Password:*</div>
+                <input type='password' name='password'
+                  required
+                  value={password}
+                  onChange={handleChangePassword} />
+                {errorPassword && <div style={{ color: 'red' }}>{errorPassword}</div>}
+              </label>
+              <label><div>Date of birth:*</div>
+                <select className='days' name='days' onChange={(e) => handleChangeDate(e, "day")}>
+                  <option>day</option>
+                  {renderDays()}
+                </select>
+                <select className='month' name='month'
+                  onChange={(e) => handleChangeDate(e, "month")} >
+                  <option>month</option>
+                  {renderMonths()}
+                </select>
+                <select className='year' name='year'
+                  onChange={(e) => handleChangeDate(e, 'year')} >
+                  <option value='year'>year</option>
+                  {renderYears()}
+                </select>
+              </label>
+              {errorDate && <div style={{ color: 'red' }}>{errorDate}</div>}
             </div>
+            <div>
+              <label><div>Languages:*</div>
+                <div onChange={handleChangeLanguage}>
+                  <div>
+                    <input type="checkbox" name='language ' id='Armenian' value={'Armenian'} />
+                    <label for='Armenian'>Armenian</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" name='language ' id='Russian' value={'Russian'} />
+                    <label for='Russian' >Russian</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" name='language ' id='English' value={'English'} />
+                    <label for='English'>English</label>
+                  </div>
+                </div>
 
-          </label>
-          <label required> <div>Gender:*</div>
-            <div >
-              <div>
-                <input type="radio" name='male' id='Male' value={"Male"}
-                  onChange={handleChangeGender}
-                  checked={gender === 'Male'}
-                />
-                <label for='Male'>Male</label>
-              </div>
-              <div>
-                <input type="radio" name='female' id='Female' value={"Female"}
-                  checked={gender === "Female"}
-                  onChange={handleChangeGender} />
-                <label for='Female' >Female</label>
-              </div>
+              </label>
+              <label required> <div>Gender:*</div>
+                <div >
+                  <div>
+                    <input type="radio" name='male' id='Male' value={"Male"}
+                      onChange={handleChangeGender}
+                      checked={gender === 'Male'}
+                    />
+                    <label for='Male'>Male</label>
+                  </div>
+                  <div>
+                    <input type="radio" name='female' id='Female' value={"Female"}
+                      checked={gender === "Female"}
+                      onChange={handleChangeGender} />
+                    <label for='Female' >Female</label>
+                  </div>
+                </div>
+              </label>
             </div>
-
-          </label>
-          <label><div>Upload Photo:</div>
+          </div>
+          <div>
+            <label> <div>Bio:</div>
+              <textarea name="bio" rows="4" cols="50"
+                onChange={handleChangeBio}
+              />
+            </label>
+          </div>
+          <label className='uloadPhotoContainer'><div>Upload Photo:</div>
             <img style={{
               width: '100px',
               height: '100px',
@@ -284,8 +292,9 @@ function App() {
               onChange={handleChangeAvatarPhoto}
             />
           </label>
-
-          <button>Submit</button>
+          <div >
+            <button className='submitButton'>Submit</button>
+          </div>
         </form>
       </div>
     </div>

@@ -1,40 +1,40 @@
+.profile{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(204, 194, 180);
+}
 .profileContainer{
-    margin-top: 100px;
-    align-items: center;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
+
 .userProfilrWrapper{
     display: flex;
-    gap: 25px;
-    padding: 50px;
-    background-color: red;
-    
+    margin: 50px  80px ;
+    padding: 50px ;
+    background-color: rgb(148, 166, 167);
+    border-radius: 30px;
+    gap: 200px;
+}
+.userProfileInformation{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 .userProfileName{
     display: flex;
-    gap: 15px;
+    gap: 10px;
+    font-size: 25px;
 }
 .userProfileAgeGender{
     display: flex;
     gap: 10px;
-    margin-top: 10px;
-}
-.userProfileEmail{
-    margin-top: 10px;
-}
-
-.userProfileBio{
-    margin-top: 10px;
-}
-.userProfileLanguages{
-    margin-top: 10px;
-}
-.userProfilePhoto{
-    width: 150px;
-    height: 150px;
+    font-size: 18PX;
 }
 .profileImg{
-    width: 150px;
-    height: 150px;
+   width:  250px;
+    height: 250px;
+    border-radius: 50%;
 }
